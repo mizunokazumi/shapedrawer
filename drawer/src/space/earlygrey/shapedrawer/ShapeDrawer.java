@@ -1427,10 +1427,10 @@ public class ShapeDrawer extends AbstractShapeDrawer {
             float halfWidth = 0.5f*lineWidth;
             float X = x+width, Y = y+height;
             boolean caching = batchManager.isCachingDraws();
-            lineDrawer.pushLine(x+halfWidth, y, X-halfWidth, y, lineWidth, false);//bottom
-            lineDrawer.pushLine(x+halfWidth, Y, X-halfWidth, Y, lineWidth, false);//top
-            lineDrawer.pushLine(x, y-halfWidth, x, Y+halfWidth, lineWidth, false);//left
-            lineDrawer.pushLine(X, y-halfWidth, X, Y+halfWidth, lineWidth, false);//right
+            lineDrawer.pushLine(x+halfWidth, y, X-halfWidth, y, lineWidth, true);//bottom
+            lineDrawer.pushLine(x+halfWidth, Y, X-halfWidth, Y, lineWidth, true);//top
+            lineDrawer.pushLine(x, y-halfWidth, x, Y+halfWidth, lineWidth, true);//left
+            lineDrawer.pushLine(X, y-halfWidth, X, Y+halfWidth, lineWidth, true);//right
             if (!caching) batchManager.pushToBatch();
             return;
         }
